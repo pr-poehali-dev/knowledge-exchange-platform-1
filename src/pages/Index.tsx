@@ -381,6 +381,142 @@ const Index = () => {
               </div>
             </Card>
           </div>
+
+          <div className="mt-16">
+            <Card className="p-8 bg-gradient-to-br from-purple-50 to-white">
+              <h2 className="text-3xl font-bold text-center mb-4">Дорожная карта разработки</h2>
+              <p className="text-center text-muted-foreground mb-12">План создания платформы 2026-2027</p>
+              
+              <div className="max-w-6xl mx-auto">
+                <div className="relative">
+                  <div className="absolute left-0 top-16 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-green-500 via-purple-500 to-orange-500 hidden md:block"></div>
+
+                  <div className="space-y-8">
+                    <div className="relative flex items-start gap-6 animate-fade-in">
+                      <div className="hidden md:flex absolute left-0 w-12 h-12 -ml-6 bg-blue-500 rounded-full items-center justify-center text-white font-bold shadow-lg z-10">
+                        1
+                      </div>
+                      <Card className="flex-1 md:ml-12 p-6 bg-gradient-to-r from-blue-100 to-blue-50 border-2 border-blue-300 hover-scale">
+                        <div className="flex items-start justify-between gap-4 flex-wrap">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Icon name="FileText" size={24} className="text-blue-700" />
+                              <h3 className="text-xl font-bold text-blue-900">Определение требований</h3>
+                            </div>
+                            <p className="text-blue-800 mb-2">
+                              Анализ функционала и сбор обратной связи от студентов и преподавателей
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-sm font-semibold text-blue-700 mb-1">Январь - Март 2026</div>
+                            <Badge className="bg-blue-600">3 месяца</Badge>
+                          </div>
+                        </div>
+                      </Card>
+                    </div>
+
+                    <div className="relative flex items-start gap-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                      <div className="hidden md:flex absolute left-0 w-12 h-12 -ml-6 bg-green-500 rounded-full items-center justify-center text-white font-bold shadow-lg z-10">
+                        2
+                      </div>
+                      <Card className="flex-1 md:ml-12 p-6 bg-gradient-to-r from-green-100 to-green-50 border-2 border-green-300 hover-scale">
+                        <div className="flex items-start justify-between gap-4 flex-wrap">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Icon name="Wrench" size={24} className="text-green-700" />
+                              <h3 className="text-xl font-bold text-green-900">Выбор технологий</h3>
+                            </div>
+                            <p className="text-green-800 mb-2">
+                              Подбор подходящей технологии и инструментов для разработки платформы
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-sm font-semibold text-green-700 mb-1">Март - Апрель 2026</div>
+                            <Badge className="bg-green-600">1 месяц</Badge>
+                          </div>
+                        </div>
+                      </Card>
+                    </div>
+
+                    <div className="relative flex items-start gap-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                      <div className="hidden md:flex absolute left-0 w-12 h-12 -ml-6 bg-purple-500 rounded-full items-center justify-center text-white font-bold shadow-lg z-10">
+                        3
+                      </div>
+                      <Card className="flex-1 md:ml-12 p-6 bg-gradient-to-r from-purple-100 to-purple-50 border-2 border-purple-300 hover-scale">
+                        <div className="flex items-start justify-between gap-4 flex-wrap">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Icon name="Palette" size={24} className="text-purple-700" />
+                              <h3 className="text-xl font-bold text-purple-900">Проектирование интерфейса</h3>
+                            </div>
+                            <p className="text-purple-800 mb-2">
+                              Создание детальных макетов интерфейса и UX-прототипов платформы
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-sm font-semibold text-purple-700 mb-1">Апрель - Май 2026</div>
+                            <Badge className="bg-purple-600">1 месяц</Badge>
+                          </div>
+                        </div>
+                      </Card>
+                    </div>
+
+                    <div className="relative flex items-start gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                      <div className="hidden md:flex absolute left-0 w-12 h-12 -ml-6 bg-orange-500 rounded-full items-center justify-center text-white font-bold shadow-lg z-10">
+                        4
+                      </div>
+                      <Card className="flex-1 md:ml-12 p-6 bg-gradient-to-r from-orange-100 to-orange-50 border-2 border-orange-300 hover-scale">
+                        <div className="flex items-start justify-between gap-4 flex-wrap">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Icon name="Rocket" size={24} className="text-orange-700" />
+                              <h3 className="text-xl font-bold text-orange-900">Разработка и тестирование</h3>
+                            </div>
+                            <p className="text-orange-800 mb-2">
+                              Создание демо-версии платформы и проведение тестирования с реальными пользователями
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-sm font-semibold text-orange-700 mb-1">Май - Октябрь 2026</div>
+                            <Badge className="bg-orange-600">6 месяцев</Badge>
+                          </div>
+                        </div>
+                      </Card>
+                    </div>
+                  </div>
+
+                  <div className="mt-12 p-6 bg-gradient-to-r from-green-100 to-blue-100 rounded-xl border-2 border-green-300">
+                    <div className="flex items-center justify-center gap-3">
+                      <Icon name="CheckCircle" size={32} className="text-green-600" />
+                      <div>
+                        <h3 className="text-xl font-bold text-green-900">Запуск платформы</h3>
+                        <p className="text-green-800">Октябрь 2026 - Начало 2027</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 grid md:grid-cols-4 gap-4 text-center">
+                    <div className="p-4 bg-blue-100 rounded-lg">
+                      <div className="text-2xl font-bold text-blue-900">3 мес</div>
+                      <div className="text-sm text-blue-700">Требования</div>
+                    </div>
+                    <div className="p-4 bg-green-100 rounded-lg">
+                      <div className="text-2xl font-bold text-green-900">1 мес</div>
+                      <div className="text-sm text-green-700">Технологии</div>
+                    </div>
+                    <div className="p-4 bg-purple-100 rounded-lg">
+                      <div className="text-2xl font-bold text-purple-900">1 мес</div>
+                      <div className="text-sm text-purple-700">Дизайн</div>
+                    </div>
+                    <div className="p-4 bg-orange-100 rounded-lg">
+                      <div className="text-2xl font-bold text-orange-900">6 мес</div>
+                      <div className="text-sm text-orange-700">Разработка</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
