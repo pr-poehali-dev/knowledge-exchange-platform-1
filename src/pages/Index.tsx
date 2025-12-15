@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const Index = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -126,13 +125,7 @@ const Index = () => {
       </header>
 
       <div className="container mx-auto px-4 py-8">
-        <Tabs defaultValue="questions" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-            <TabsTrigger value="questions">Вопросы и ответы</TabsTrigger>
-            <TabsTrigger value="scheme">Схема работы</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="questions" className="space-y-6">
+        <div className="space-y-12">
             <div className="grid lg:grid-cols-4 gap-6">
               <div className="lg:col-span-3 space-y-6">
                 <Card className="p-6">
@@ -274,106 +267,84 @@ const Index = () => {
                 </Card>
               </div>
             </div>
-          </TabsContent>
 
-          <TabsContent value="scheme">
-            <Card className="p-8">
-              <h2 className="text-3xl font-bold text-center mb-8">Схема обмена знаниями</h2>
+          <div className="mt-16">
+            <Card className="p-8 bg-gradient-to-br from-blue-50 to-white">
+              <h2 className="text-3xl font-bold text-center mb-12">Как работает платформа</h2>
               
-              <div className="max-w-4xl mx-auto space-y-12">
-                <div className="flex items-center gap-6 animate-fade-in">
-                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-500 text-white font-bold text-2xl shrink-0 shadow-lg">
-                    1
+              <div className="max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-8 relative">
+                  <div className="absolute top-1/3 left-0 right-0 hidden md:flex items-center justify-between px-12 pointer-events-none">
+                    <div className="flex-1 h-1 bg-gradient-to-r from-blue-400 via-green-400 to-purple-400"></div>
                   </div>
-                  <div className="flex-1 p-6 bg-gradient-to-r from-blue-50 to-white rounded-xl border-2 border-blue-200">
-                    <h3 className="font-bold text-xl mb-2 flex items-center gap-2">
-                      <Icon name="HelpCircle" size={24} className="text-blue-600" />
-                      Студент задает вопрос
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Студент формулирует вопрос, добавляет теги, категорию и публикует его на платформе
+
+                  <div className="relative z-10 flex flex-col items-center text-center space-y-4 animate-fade-in">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-xl">
+                      <Icon name="MessageCircleQuestion" size={40} className="text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold">Вопрос</h3>
+                    <p className="text-sm text-muted-foreground px-2">
+                      Студент задаёт вопрос с тегами и категорией
+                    </p>
+                  </div>
+
+                  <div className="relative z-10 flex flex-col items-center text-center space-y-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-xl">
+                      <Icon name="Users" size={40} className="text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold">Сообщество</h3>
+                    <p className="text-sm text-muted-foreground px-2">
+                      Преподаватели и студенты видят вопрос в ленте
+                    </p>
+                  </div>
+
+                  <div className="relative z-10 flex flex-col items-center text-center space-y-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-xl">
+                      <Icon name="MessageSquare" size={40} className="text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold">Ответы</h3>
+                    <p className="text-sm text-muted-foreground px-2">
+                      Участники делятся знаниями и опытом
                     </p>
                   </div>
                 </div>
 
-                <div className="flex justify-center">
-                  <Icon name="ArrowDown" size={32} className="text-primary animate-bounce" />
+                <div className="flex justify-center my-12">
+                  <Icon name="ArrowDown" size={48} className="text-primary animate-bounce" />
                 </div>
 
-                <div className="flex items-center gap-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-500 text-white font-bold text-2xl shrink-0 shadow-lg">
-                    2
-                  </div>
-                  <div className="flex-1 p-6 bg-gradient-to-r from-green-50 to-white rounded-xl border-2 border-green-200">
-                    <h3 className="font-bold text-xl mb-2 flex items-center gap-2">
-                      <Icon name="Users" size={24} className="text-green-600" />
-                      Сообщество видит вопрос
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Вопрос отображается в общей ленте, участники могут фильтровать по категориям и тегам
-                    </p>
-                  </div>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <Card className="p-6 bg-white hover-scale">
+                    <div className="flex items-start gap-4">
+                      <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
+                        <Icon name="ThumbsUp" size={32} className="text-orange-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold mb-2">Голосование</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Сообщество голосует за лучшие ответы. Автор вопроса отмечает решение как принятое.
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+
+                  <Card className="p-6 bg-white hover-scale">
+                    <div className="flex items-start gap-4">
+                      <div className="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center shrink-0">
+                        <Icon name="Award" size={32} className="text-yellow-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold mb-2">Рейтинг</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Активные участники получают баллы, растут в рейтинге и становятся экспертами института.
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
 
-                <div className="flex justify-center">
-                  <Icon name="ArrowDown" size={32} className="text-primary animate-bounce" />
-                </div>
-
-                <div className="flex items-center gap-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-purple-500 text-white font-bold text-2xl shrink-0 shadow-lg">
-                    3
-                  </div>
-                  <div className="flex-1 p-6 bg-gradient-to-r from-purple-50 to-white rounded-xl border-2 border-purple-200">
-                    <h3 className="font-bold text-xl mb-2 flex items-center gap-2">
-                      <Icon name="MessageSquare" size={24} className="text-purple-600" />
-                      Преподаватели и студенты отвечают
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Любой участник платформы может дать ответ, поделиться опытом или добавить полезную информацию
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex justify-center">
-                  <Icon name="ArrowDown" size={32} className="text-primary animate-bounce" />
-                </div>
-
-                <div className="flex items-center gap-6 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-orange-500 text-white font-bold text-2xl shrink-0 shadow-lg">
-                    4
-                  </div>
-                  <div className="flex-1 p-6 bg-gradient-to-r from-orange-50 to-white rounded-xl border-2 border-orange-200">
-                    <h3 className="font-bold text-xl mb-2 flex items-center gap-2">
-                      <Icon name="ThumbsUp" size={24} className="text-orange-600" />
-                      Голосование за лучшие ответы
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Сообщество голосует за полезные ответы, поднимая их вверх. Автор вопроса отмечает решение
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex justify-center">
-                  <Icon name="ArrowDown" size={32} className="text-primary animate-bounce" />
-                </div>
-
-                <div className="flex items-center gap-6 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-yellow-500 text-white font-bold text-2xl shrink-0 shadow-lg">
-                    5
-                  </div>
-                  <div className="flex-1 p-6 bg-gradient-to-r from-yellow-50 to-white rounded-xl border-2 border-yellow-200">
-                    <h3 className="font-bold text-xl mb-2 flex items-center gap-2">
-                      <Icon name="Award" size={24} className="text-yellow-600" />
-                      Рейтинг и награды
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Активные участники получают баллы, поднимаются в рейтинге и становятся экспертами
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-16 grid md:grid-cols-3 gap-6">
-                  <Card className="p-6 text-center hover-scale">
+                <div className="mt-12 grid md:grid-cols-3 gap-6">
+                  <Card className="p-6 text-center hover-scale bg-white">
                     <div className="flex justify-center mb-4">
                       <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
                         <Icon name="Zap" size={32} className="text-blue-600" />
@@ -384,7 +355,7 @@ const Index = () => {
                       Получайте помощь от сообщества в считанные минуты
                     </p>
                   </Card>
-                  <Card className="p-6 text-center hover-scale">
+                  <Card className="p-6 text-center hover-scale bg-white">
                     <div className="flex justify-center mb-4">
                       <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
                         <Icon name="BookOpen" size={32} className="text-green-600" />
@@ -395,7 +366,7 @@ const Index = () => {
                       Формируйте коллективную базу знаний института
                     </p>
                   </Card>
-                  <Card className="p-6 text-center hover-scale">
+                  <Card className="p-6 text-center hover-scale bg-white">
                     <div className="flex justify-center mb-4">
                       <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center">
                         <Icon name="Users" size={32} className="text-purple-600" />
@@ -409,8 +380,8 @@ const Index = () => {
                 </div>
               </div>
             </Card>
-          </TabsContent>
-        </Tabs>
+          </div>
+        </div>
       </div>
     </div>
   );
